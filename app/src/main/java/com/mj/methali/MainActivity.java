@@ -56,12 +56,18 @@ public class MainActivity extends AppCompatActivity {
                     DatabaseContract.Entry.TABLE_NAME,
                     null,
                     null,
-                    null, null, null, null);
+                    null,
+                    null,
+                    null,
+                    null
+            );
             cursor.moveToFirst();
-            cursor.move(new Random().nextInt(cursor.getCount()));
-            String kisw = "";
-            kisw += cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.Entry.COLUMN_NAME_KISW));
+            cursor.move(new Random().nextInt(cursor.getCount()));//random entry
+
+            String kisw = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.Entry.COLUMN_NAME_KISW));
             cursor.close();
+
+            kisw += "";
             tv.setText(kisw);
         }
 
